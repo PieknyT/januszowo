@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1439908323 source:c:\users\dell\documents\programowanie\graliczbylosowe\main.cpp
+	<iostream>
+	<cstdlib>
+	<time.h>
+	<stdio.h>
+

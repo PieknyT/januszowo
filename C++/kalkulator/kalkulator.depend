@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1439987066 source:c:\users\dell\documents\programowanie\kalkulator\main.cpp
+	<iostream>
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+
