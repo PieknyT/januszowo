@@ -1,0 +1,187 @@
+body
+{
+background: url(img/tlo4.png);/*from http://subtlepatterns.com*/
+color: #ffffff;
+font-family: 'Ubuntu', sans-serif;
+font-size:20px;
+}
+
+#container
+{
+width: 1000px;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+.rectangle
+{
+width: 960px;
+margin: 20px;
+text-align:center;
+}
+
+.square
+{
+with:50%;
+float:left;
+}
+
+#logo
+{
+float:left;
+font-family: 'Josefin Sans', sans-serif;
+font-size:70px;
+width:600px;
+margin-top:2px;
+margin-bottom:2px;
+text-align:left;
+}
+
+#zegar
+{
+float:left;
+font-family: 'Josefin Sans', sans-serif;
+font-size:70px;
+margin-top:2px;
+margin-bottom:2px;
+text-align:left;
+}
+
+
+.tile1
+{
+margin:10px;
+width:230px;
+height:142px;
+background:#4CAA0B;
+text-align:center;
+float:left;
+}
+
+.tile1:hover
+{
+
+background-color:#3B990A;
+}
+
+.tile2
+{
+margin:10px;
+width:230px;
+height:142px;
+background:#4FAFFF;
+float:left;
+text-align:center;
+ 
+}
+
+.tile2:hover
+{
+
+background-color:#3e9eee;;
+}
+
+.tile3
+{
+margin:10px;
+width:230px;
+height:142px;
+background:#7F387B;
+float:left;
+text-align:center;
+}
+
+.tile3:hover
+{
+background-color:#6e276a;;
+}
+
+
+.tile4
+{
+margin:10px;
+width:420px;
+height:82px;
+background:#FF6501;
+text-align:center;
+font-size: 26px;
+padding:30px;
+line-height: 150%;
+}
+
+
+.tile5
+{
+margin:10px;
+width:420px;
+height:244px;
+background:#666666;
+text-align:justify;
+padding:30px;
+}
+
+.gitHub
+{
+margin:10px;
+width:147px;
+height:142px;
+background:#111111;
+color:#000000;
+float:left;
+}
+
+.gitHub:hover
+{
+
+background-color:#000000;
+color:white;
+}
+
+.linkedin
+{
+margin:10px;
+width:146px;
+height:142px;
+background:#1884BB;
+float:left;
+color: #000000;
+}
+
+.linkedin:hover
+{
+
+background-color:#0773aa;
+}
+
+.fb
+{
+margin:10px;
+width:147px;
+height:142px;
+background:#425F9C;
+float:left;
+color: #000000;
+}
+
+.fb:hover
+{
+background-color:#314e8b;
+}
+
+a.sociallink
+{
+color:white;
+display:block;
+width: 146px;
+height: 142px;
+}
+
+a.tilelink
+{
+	color:#ffffff;
+	text-decoration: none;
+}
+
+
+
