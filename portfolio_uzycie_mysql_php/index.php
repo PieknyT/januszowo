@@ -22,7 +22,7 @@
 		
 			<div class="rectangle">
 			
-				<div id="logo"><a href="php-developer-junior" class = "tilelink" >Tomasz Majka</a></div>
+				<div id="logo"><a href="index.php" class = "tilelink" >Tomasz Majka</a></div>
 				<div id="zegar"><br/></div>
 				<div style="clear:both;"></div>
 			
