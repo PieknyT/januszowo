@@ -6,7 +6,7 @@
 			{
 				$host = "localhost";
 				$db_user = "pieknytomasz";
-				$db_password = "klmt22";
+				$db_password = "";
 				$db_name = "pieknytomasz_cba_pl";
 				
 				$connect = @new mysqli($host, $db_user, $db_password, $db_name);
