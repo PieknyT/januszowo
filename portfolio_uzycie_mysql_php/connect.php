@@ -5,9 +5,9 @@
 		function showTextTaile($input)
 			{
 				$host = "localhost";
-				$db_user = "pieknytomasz";
+				$db_user = "";
 				$db_password = "";
-				$db_name = "pieknytomasz_cba_pl";
+				$db_name = "";
 				
 				$connect = @new mysqli($host, $db_user, $db_password, $db_name);
 				

@@ -45,8 +45,8 @@
 				  <div style="clear:both;"></div>
 				  
 				 <form  metod="get">
-					<button name ="tiletitle" type="submit" value ="whyyou" class="tile2" >
-						<i class="icon-drupal"></i><br/>Dlaczego Wasz Team?
+					<button name ="tiletitle" type="submit" value ="whyyou" class="tile2" > 
+						<i class="demo-icon icon-cog-alt"></i> <br/>Dlaczego Wasz Team?
 					</button>
 				</form>
 				
