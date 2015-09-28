@@ -1,35 +1,30 @@
 <?php
 
 
-
-		function showTextTaile($input)
-			{
-				$host = "localhost";
-				$db_user = "";
-				$db_password = "";
-				$db_name = "";
-				
-				$connect = @new mysqli($host, $db_user, $db_password, $db_name);
-				
-				if($connect->connect_errno!=0)
-				{
-					echo "Error: ". $connect->connect_errno;
-				}
-				else
-				{
-					
-					$sql = "SELECT tile FROM content WHERE id = '$input'";
-					$result = @$connect->query($sql);
-					$record=$result->fetch_assoc();
-					$result->close();
-					$connect->close();
-					return $texttile=$record['tile'];
-				}
-			}
-
-		if (isset($_GET['tiletitle']))
+	function showTextTaile($input)
+	{
+		$needle= '\'';
+		if(strlen($input) <=7 && strlen($input)>=5 && strpos($input,$needle)==false)
 		{
+			$hostname = 'localhost';
+			$username = '';
+			$password = '';
+
+			$dbh = @new PDO("mysql:host=$hostname;dbname=tomaszm_cba_pl", $username, $password);
+			$sql = "SELECT tile FROM content WHERE id = '$input'" ;
+			$stmt=$dbh->query($sql);
+			$result = $stmt->fetch(PDO::FETCH_ASSOC);
+			return $texttile=$result['tile'];
+			$dbh = null;	
+		}
+		
+	}
+
+	if (isset($_GET['tiletitle']))
+		{
+			
 			$tiletitle = $_GET['tiletitle'];	
+			
 			echo showTextTaile($tiletitle);
 		}
 		else
