@@ -1,37 +1,38 @@
 <?php
-
-
 	function showTextTaile($input)
 	{
-		$needle= '\'';
-		if(strlen($input) <=7 && strlen($input)>=5 && strpos($input,$needle)==false)
+		try
 		{
 			$hostname = 'localhost';
-			$username = '';
+			$username = 'root';
 			$password = '';
 
-			$dbh = @new PDO("mysql:host=$hostname;dbname=tomaszm_cba_pl", $username, $password);
-			$sql = "SELECT tile FROM content WHERE id = '$input'" ;
-			$stmt=$dbh->query($sql);
+			$dbh = new PDO("mysql:host=$hostname;dbname=tilecontents;encoding=utf8", $username, $password); 
+			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			
+			
+			
+			$stmt=$dbh->prepare('SELECT `tile` FROM `content` WHERE `id` =:id');
+			$stmt->bindValue(':id', $input, PDO::PARAM_STR);
+			$stmt -> execute();
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
-			return $texttile=$result['tile'];
+			$stmt -> closeCursor();
 			$dbh = null;	
-		}
+			return $result['tile'];
 		
+		}
+		catch(PDOException $e)
+		{
+			echo 'Połaczenie nie mogło zostać utworzone.';
+		}
 	}
 
 	if (isset($_GET['tiletitle']))
 		{
-			
-			$tiletitle = $_GET['tiletitle'];	
-			
-			echo showTextTaile($tiletitle);
+			echo showTextTaile($_GET['tiletitle']);
 		}
 		else
 		{
-			$tiletitle='index';
-			echo showTextTaile($tiletitle);
-			
+			echo showTextTaile('index');
 		}
-		
 ?>
