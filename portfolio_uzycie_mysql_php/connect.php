@@ -1,5 +1,5 @@
 <?php
-	function showTextTaile($input)
+	function showTextTaile($input='index')
 	{
 		try
 		{
@@ -13,26 +13,36 @@
 			
 			
 			$stmt=$dbh->prepare('SELECT `tile` FROM `content` WHERE `id` =:id');
-			$stmt->bindValue(':id', $input, PDO::PARAM_STR);
+			$stmt->bindParam(':id', $input, PDO::PARAM_STR); //????
 			$stmt -> execute();
 			$result = $stmt->fetch(PDO::FETCH_ASSOC);
 			$stmt -> closeCursor();
-			$dbh = null;	
-			return $result['tile'];
-		
+			$dbh = null;
+			
+			if($result ==false)
+			{
+				return 'Nie ma takiej tresci';
+			}
+			else
+			{
+				return $result['tile'];
+			}	
 		}
 		catch(PDOException $e)
 		{
-			echo 'Połaczenie nie mogło zostać utworzone.';
+		
+			die('Połaczenie z bazą nie mogło zostać utworzone.');
 		}
 	}
 
+	
+	
 	if (isset($_GET['tiletitle']))
 		{
 			echo showTextTaile($_GET['tiletitle']);
 		}
 		else
 		{
-			echo showTextTaile('index');
+			echo showTextTaile();
 		}
 ?>
